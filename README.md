@@ -1,1 +1,1 @@
-# citation-style-predictor
+# Citation style classification
