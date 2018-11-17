@@ -1,3 +1,5 @@
+# citation styles
+
 STYLES = [
     'acm-sig-proceedings',
     'american-chemical-society',
@@ -17,6 +19,8 @@ STYLES = [
     'springer-lecture-notes-in-computer-science',
     'vancouver']
 
+
+# data cleaning settings
 
 MIN_REF_LEN = 11
 
@@ -42,6 +46,8 @@ REGEX_MONTH_REMOVE = {
     r'(?<!\d)[123]?\d\ '+MONTH_PATTERN+' ('+YEAR_PATTERN+')\.': r'\1.'}
 
 
+# feature token mapping
+
 REGEX_WORD_TO_TOKEN = {
     '(?<![a-zA-Z])[a-z]{2,}(?![a-zA-Z])': 'lcword',
     '(?<![a-zA-Z])[a-z](?![a-zA-Z])': 'lclett',
@@ -66,4 +72,9 @@ REGEX_WORD_TO_TOKEN = {
     '[“”]': 'quot',
     '[^a-z ]+': 'other'}
 
-NGRAM_RANGE = (1, 2)
+
+# training settings
+
+N_FEATURES = 5000
+
+NGRAM_RANGE = (2, 4)
