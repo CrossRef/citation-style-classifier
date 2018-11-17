@@ -7,8 +7,9 @@ from sklearn.model_selection import KFold
 
 
 def evaluate_cv(data, algorithm, folds=5, feature_fun=get_tfidf_features,
-                nfeatures=None, ngrams=NGRAM_RANGE, feature_selector=None):
-    fold_data = KFold(n_splits=folds, shuffle=True, random_state=0)
+                nfeatures=None, ngrams=NGRAM_RANGE, feature_selector=None,
+                random_state=0):
+    fold_data = KFold(n_splits=folds, shuffle=True, random_state=random_state)
     accuracies = []
     cv_data = []
     dois = data['doi'].drop_duplicates()
